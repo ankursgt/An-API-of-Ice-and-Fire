@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-md-12">
+            <div class="row">
+                <div class="col-md-3 offset-md-9">
+                    <label for="search"></label>
+                    <input #in type="text" placeholder="search" [(ngModel)]="search">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+        <h1 class="display-4">Books</h1>
+            <div *ngFor="let book of books|filter:search|sort"><!--applying search and sort pipe-->
+                <div class="card" style="background-color:black">
+                    <div class="card-body">
+                        <h5 class="card-title">{{book.name}}</h5>
+                        <p class="card-text">Author: {{book.authors}}</p>
+                        <a [routerLink]="['/books',book.url.split('/').pop()]" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <div class="col-sm-4">
+        <h1 class="display-4">Characters</h1>
+            <div *ngFor="let character of characters|filter:search|sort">
+                <div class="card" style="background-color:maroon">
+                    <div class="card-body">
+                        <h5 class="card-title">{{character.aliases}}</h5>
+                        <a [routerLink]="['/characters',character.url.split('/').pop()]" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+        <h1 class="display-4">Houses</h1>
+            <div *ngFor="let house of houses|filter:search|sort">
+                <div class="card" style="background-color:midnightblue">
+                    <div class="card-body">
+                        <h5 class="card-title">{{house.name}}</h5>
+                        <a [routerLink]="['/houses',house.url.split('/').pop()]" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

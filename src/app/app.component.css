@@ -1,0 +1,27 @@
+.header{
+    background-color: rgb(0, 8, 8);
+    display: block;
+    padding: 3%;
+}
+
+div .col-md-12 p{
+    font-size: 30px;
+    color: darkgray;
+}
+
+html {
+    font-size: 1rem;
+  }
+
+    @media only screen and(max-width:567px){
+        font-size: 1.2rem;
+    }
+    @media only screen and(max-width:768px){
+        font-size: 1.4rem;
+    }
+    @media only screen and(max-width:992px){
+        font-size: 1.6rem;
+    }
+    @media only screen and(max-width:1200px){
+        font-size: 1.8rem;
+    }
